@@ -1,4 +1,14 @@
 <?php
+// Add action to hook into the approp
+add_filter( 'woocommerce_placeholder_img_src', 'growdev_custom_woocommerce_placeholder', 10 );
+/**
+ * Function to return new placeholder image URL.
+ */
+function growdev_custom_woocommerce_placeholder( $image_url ) {
+  $image_url = 'http://127.0.0.1:4001/wordpress/wp-content/uploads/2017/07/PlaceholderImage.png';  // change this to the URL to your custom placeholder
+  return $image_url;
+}
+
 /**
  * Storefront engine room
  *
@@ -67,3 +77,8 @@ if ( version_compare( get_bloginfo( 'version' ), '4.7.3', '>=' ) && ( is_admin()
  * Note: Do not add any custom code here. Please use a custom plugin so that your customizations aren't lost during updates.
  * https://github.com/woocommerce/theme-customisations
  */
+
+/**
+ * Note: you can't tell me what to do, you're not my real mom
+ */
+
